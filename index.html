@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>JEFE DIGITAL — Catalogue Intégral</title>
+  <title>JEFE DIGITAL — Solutions Multimédias</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050508; --card: #0f111a; --text: #f0f0f5; --muted: #8e91a8;
-      --accent: #10b981; --ring: #1e2130; --blue: #3b82f6;
+      --accent: #10b981; --ring: #1e2130;
     }
     * { box-sizing: border-box; }
     html, body { 
@@ -48,8 +48,10 @@
       display: flex; align-items: center; justify-content: center; 
       width: 100%; padding: 14px; border-radius: 12px; font-weight: 700; 
       transition: 0.2s; text-decoration: none; background: #fff; color: #000;
+      margin-top: 8px;
     }
-    .btn-wa { background: #25d366 !important; color: #fff !important; margin-top: 10px; }
+    .btn-wa { background: #25d366 !important; color: #fff !important; }
+    .btn-plus { background: #1e293b !important; color: #fff !important; border: 1px solid #334155; }
     footer { margin-top: 60px; padding: 40px 0; border-top: 1px solid var(--ring); text-align: center; font-size: 11px; color: var(--muted); }
   </style>
 </head>
@@ -57,51 +59,62 @@
   <div class="container">
     <header>
       <div class="brand"><strong>JEFE DIGITAL SERVICES</strong></div>
-      <span class="badge">Accès Privé Certifié</span>
+      <span class="badge">Catalogue Privé 2026</span>
     </header>
 
     <section style="margin-top:40px">
-      <h2 style="font-size:28px; margin:0;">Solutions Digitales & Multimédias</h2>
-      <p style="color:var(--muted); margin-top:5px;">Catalogue exhaustif 2026 — Performance & Stabilité.</p>
+      <h2 style="font-size:28px; margin:0;">Solutions Multimédias & Cloud</h2>
+      <p style="color:var(--muted); margin-top:5px;">Performance certifiée. Options spécifiques disponibles sur demande.</p>
     </section>
 
     <div id="packs" class="grid"></div>
 
     <footer>
       © <span id="year"></span> JEFE DIGITAL SERVICES — Consultant Digital.<br>
-      Paiements sécurisés via Wise, Bitsa, Paysera ou Lydia. Support 7j/7.
+      Virement SEPA (Wise/Bitsa/Paysera) & Lydia acceptés. Toute reproduction interdite.
     </footer>
   </div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     const DATA = [
-      { t:'Pack SILVER (Standard HD)', p:40, d:'IPTV : Flux stables qualité HD. Idéal pour mobiles et tablettes.' },
-      { t:'Pack GOLD (Full HD 1080p)', p:50, d:'IPTV : Le best-seller. Sport et Cinéma fluide + VOD complète.' },
-      { t:'Pack DIAMOND (4K UHD)', p:60, d:'IPTV : Expérience immersive. Image 4K native et Sport Ultra HD.' },
-      { t:'Pack WORLD VIP', p:65, d:'IPTV : Accès international complet + VOD multilingue UHD.' },
+      { t:'Pack SILVER (France & Sport)', p:40, d:'IPTV : TNT + Bouquet Sport complet (Canal+, BeIN, RMC). Flux HD stables.', x:true },
+      { t:'Pack GOLD (International FHD)', p:50, d:'IPTV : Best-seller. Toutes les chaînes mondiales + Sport + VOD.', x:true },
+      { t:'Pack DIAMOND (World 4K)', p:60, d:'IPTV : Image 4K native. Chaînes mondiales, Sport Ultra HD et VOD Cinema.', x:true },
+      { t:'Pack BLACK (Full 4K + Adultes)', p:75, d:'L’offre ultime : Pack Diamond + Accès complet aux bouquets adultes sécurisés.' },
+      { t:'Pack WORLD VIP', p:65, d:'IPTV : Accès international premium complet + VOD multilingue UHD.' },
+      { t:'Pack KIDS (Jeunesse)', p:40, d:'IPTV : Sélection sécurisée de chaînes jeunesse et dessins animés 24h/24.' },
       { t:'Pack DOUBLE ÉCRAN', p:90, d:'IPTV : Profitez de deux connexions simultanées en qualité maximale.' },
-      { t:'ORA PLAYER (Lifetime)', p:10, d:'Activation définitive de l\'application pour Smart TV (licence à vie).' },
-      { t:'Netflix Premium (12 mois)', p:65, d:'Compte personnel Ultra HD 4K. Profil sécurisé garanti.' },
-      { t:'YouTube Premium (1 an)', p:50, d:'Navigation sans publicité + YouTube Music inclus.' },
+      { t:'ChatGPT Plus (12 mois)', p:90, d:'Accès Premium OpenAI. Modèles avancés et outils DALL-E/Data.' },
+      { t:'Gemini Advanced (12 mois)', p:90, d:'L\'intelligence artificielle de Google la plus puissante (12 mois).' },
+      { t:'Netflix Premium (12 mois)', p:65, d:'Compte personnel Ultra HD 4K. Profil privé sécurisé.' },
       { t:'Prime Video (12 mois)', p:30, d:'Accès complet au catalogue Amazon Prime Video HD/4K.' },
-      { t:'Pack Complet ADOBE', p:50, d:'Licence à vie (Photoshop, Premiere, Illustrator, etc.).'},
-      { t:'Suite Office 365 Pro', p:50, d:'Licence complète permanente (Word, Excel, Outlook...).'},
-      { t:'iCloud+ Family (1 To)', p:30, d:'Abonnement 12 mois. Stockage Apple partagé en famille.' },
-      { t:'iCloud+ Family (2 To)', p:50, d:'Abonnement 12 mois. Capacité maximale pour toute la famille.' },
-      { t:'Pack Intelligence Artificielle', p:90, d:'Accès Premium 1 an aux outils OpenAI les plus avancés.' }
+      { t:'YouTube Premium (1 an)', p:50, d:'Navigation sans publicité + YouTube Music inclus.' },
+      { t:'Pack Complet ADOBE', p:50, d:'Licence permanente à vie (Photoshop, Premiere, Illustrator...).'},
+      { t:'Suite Office 365 Pro', p:50, d:'Licence complète permanente à vie (Word, Excel, Outlook...).'},
+      { t:'iCloud+ Family (1 To)', p:30, d:'Stockage Apple 12 mois. Partage familial inclus.' },
+      { t:'iCloud+ Family (2 To)', p:50, d:'Capacité Apple maximale 12 mois. Partage familial.' },
+      { t:'ORA PLAYER (Lifetime)', p:10, d:'Activation définitive de l\'application Smart TV (licence à vie).' }
     ];
 
     const packsEl = document.getElementById('packs');
     DATA.forEach(x=>{
       const el = document.createElement('div');
       el.className='card';
+      const isLifetime = x.t.includes('vie') || x.t.includes('Lifetime') || x.t.includes('ADOBE') || x.t.includes('Office');
+      
+      let buttonsHTML = `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20je%20souhaite%20commander%20:%20${encodeURIComponent(x.t)}" class="btn btn-wa">Commander</a>`;
+      
+      if(x.x) {
+        buttonsHTML += `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20je%20souhaite%20le%20${encodeURIComponent(x.t)}%20AVEC%20option%20Adultes" class="btn btn-plus">+ Option Adultes (${x.p + 10}€)</a>`;
+      }
+
       el.innerHTML = `
         <div style="font-weight:600; font-size:12px; color:var(--accent); letter-spacing:1px">PREMIUM</div>
         <h3 style="margin:5px 0; font-size:17px">${x.t}</h3>
-        <div class="price">${x.p}€<span>${x.t.includes('vie') || x.t.includes('Lifetime') || x.t.includes('ADOBE') ? '' : '/an'}</span></div>
+        <div class="price">${x.p}€<span>${isLifetime ? '' : '/an'}</span></div>
         <p class="feat">${x.d}</p>
-        <a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20je%20souhaite%20commander%20:%20${encodeURIComponent(x.t)}" class="btn btn-wa">Commander</a>
+        ${buttonsHTML}
       `;
       packsEl.appendChild(el);
     });
