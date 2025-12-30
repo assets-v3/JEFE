@@ -18,177 +18,123 @@
       margin: 0; font-family: 'Inter', sans-serif; 
       color: var(--text); background-color: var(--bg);
       background-image: radial-gradient(circle at 80% 0%, #1e293b 0%, transparent 50%);
-      line-height: 1.6;
+      line-height: 1.5;
     }
     .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-    header { 
-      display: flex; justify-content: space-between; align-items: center; 
-      padding: 20px 0; border-bottom: 1px solid var(--ring);
-    }
-    .brand strong { 
-      font-size: 22px; background: linear-gradient(to right, #fff, var(--muted));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      letter-spacing: -1px;
-    }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--ring); }
+    .brand strong { font-size: 20px; color: #fff; letter-spacing: -1px; }
 
-    /* Boutons de contact rapides */
-    .contact-bar { display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
-    .contact-link {
-      flex: 1; min-width: 140px; display: flex; align-items: center; justify-content: center;
-      padding: 12px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px;
-    }
-    .snap-link { background: var(--snap); color: #000; }
-    .wa-link { background: #25d366; color: #fff; }
+    /* Promo & Ambassadeur */
+    .promo-banner { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--promo); border-radius: 12px; padding: 12px; margin: 15px 0; text-align: center; }
+    .promo-banner b { color: var(--promo); }
+    .ambassador-banner { border-left: 3px solid var(--accent); background: rgba(16, 185, 129, 0.05); padding: 12px; margin-bottom: 20px; border-radius: 0 8px 8px 0; font-size: 13px; }
 
-    /* Bloc Promo Fêtes */
-    .promo-banner {
-      background: linear-gradient(90deg, rgba(239, 68, 68, 0.2), transparent);
-      border: 1px solid var(--promo); border-radius: 12px;
-      padding: 15px; margin: 10px 0 20px 0; text-align: center;
-      box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
-    }
-    .promo-banner h2 { margin: 0; color: #fff; font-size: 18px; text-transform: uppercase; }
-    .promo-banner p { margin: 5px 0 0; font-size: 14px; color: #fca5a5; }
-
-    /* Bloc Programme Ambassadeur */
-    .ambassador-banner {
-      background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), transparent);
-      border-left: 4px solid var(--accent); border-radius: 12px;
-      padding: 15px; margin: 20px 0;
-    }
-    .ambassador-banner h4 { margin: 0; color: #fff; font-size: 15px; }
-    .ambassador-banner p { margin: 5px 0 0; font-size: 13px; color: var(--muted); }
-
-    /* Bloc Installation TV */
-    .tv-notice {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(15, 17, 26, 1) 100%);
-      border: 1px solid var(--blue); border-radius: 20px;
-      padding: 25px; margin: 30px 0; display: flex; align-items: center; gap: 25px; flex-wrap: wrap;
-    }
-    .tv-logo {
-      width: 80px; height: 80px; border-radius: 18px; object-fit: contain;
-      background: #ffffff; padding: 10px; border: 2px solid var(--blue);
-    }
-    .tv-content { flex: 1; min-width: 280px; }
-    .tv-notice h3 { margin: 0; color: #fff; font-size: 18px; }
-    .tv-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 15px; }
-    .tv-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--ring); font-size: 12px; }
-    .tv-item strong { display: block; color: var(--blue); margin-bottom: 3px; }
+    /* Installation TV */
+    .tv-notice { background: #0f111a; border: 1px solid var(--blue); border-radius: 16px; padding: 20px; margin: 25px 0; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .tv-logo { width: 65px; height: 65px; border-radius: 12px; background: #fff; padding: 8px; object-fit: contain; }
+    .tv-content h3 { margin: 0; font-size: 16px; color: #fff; }
+    .tv-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 10px; }
+    .tv-item { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 10px; font-size: 12px; border: 1px solid var(--ring); }
 
     /* Grille des Packs */
-    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 30px; }
-    .card { 
-      background: var(--card); border: 1px solid var(--ring); border-radius: 20px; 
-      padding: 24px; transition: transform 0.3s ease; display: flex; flex-direction: column; position: relative;
-    }
-    .card:hover { transform: translateY(-5px); border-color: #334155; }
-    .lt-badge {
-      position: absolute; top: 15px; right: 15px; background: rgba(245, 158, 11, 0.1);
-      color: var(--gold); font-size: 10px; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--gold);
-      font-weight: 800; text-transform: uppercase;
-    }
-    .price { font-size: 32px; font-weight: 800; color: #fff; margin: 10px 0; }
-    .price span { font-size: 16px; color: var(--muted); font-weight: 400; }
-    .feat { font-size: 14px; color: var(--muted); margin-bottom: 25px; flex-grow: 1; }
-    
+    .grid { display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .card { background: var(--card); border: 1px solid var(--ring); border-radius: 18px; padding: 20px; display: flex; flex-direction: column; position: relative; }
+    .price { font-size: 28px; font-weight: 800; color: #fff; margin: 5px 0; }
+    .feat { font-size: 13px; color: var(--muted); margin-bottom: 15px; flex-grow: 1; }
+
+    /* Boutons de commande Réduits */
+    .btn-group { display: flex; gap: 8px; flex-direction: column; }
     .btn { 
       display: flex; align-items: center; justify-content: center; 
-      width: 100%; padding: 14px; border-radius: 12px; font-weight: 700; 
-      transition: 0.2s; text-decoration: none; background: #fff; color: #000; margin-top: 8px;
+      padding: 10px; border-radius: 8px; font-weight: 700; font-size: 13px;
+      text-decoration: none; transition: 0.2s;
     }
-    .btn-wa { background: #25d366 !important; color: #fff !important; }
-    .btn-plus { background: #1e293b !important; color: #fff !important; border: 1px solid #334155; }
-    
-    footer { margin-top: 60px; padding: 40px 0; border-top: 1px solid var(--ring); text-align: center; font-size: 11px; color: var(--muted); }
+    .btn-wa { background: #25d366; color: #fff; }
+    .btn-snap { background: var(--snap); color: #000; }
+    .btn-bonus { background: transparent; border: 1px solid var(--blue); color: var(--blue); margin-bottom: 5px; }
+
+    footer { margin-top: 50px; padding: 30px 0; text-align: center; font-size: 11px; color: var(--muted); border-top: 1px solid var(--ring); }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="brand"><strong>JEFE DIGITAL SERVICES</strong></div>
-      <div class="badge">Privé • Sécurisé</div>
+      <div class="brand"><strong>JEFE DIGITAL</strong></div>
+      <div style="font-size: 10px; color: var(--accent); font-weight: 800;">CATALOGUE 2026</div>
     </header>
 
-    <div class="contact-bar">
-      <a href="https://wa.me/237686712411" class="contact-link wa-link">WhatsApp</a>
-      <a href="https://www.snapchat.com/add/jefeiptv?share_id=8EAQAHU2k2s&locale=fr-CM-u-mu-celsius" class="contact-link snap-link">Snapchat : jefeiptv</a>
-    </div>
-
     <div class="promo-banner">
-      <h2>🎁 OFFRE SPÉCIALE FÊTES (Jusqu'au 10 Janvier)</h2>
-      <p>Abonnement acheté = <b>Activation ORA offerte</b> + <b>Option Adultes offerte</b> !</p>
+      <b>OFFRE FÊTES :</b> Activation ORA + Option Adultes <b>OFFERTES</b> jusqu'au 10 Janvier !
     </div>
 
     <div class="ambassador-banner">
-      <h4>👥 Programme Ambassadeur</h4>
-      <p>Gagnez <b>10€ de remise</b> par parrainage. Votre ami reçoit l'<b>Option Adultes offerte</b>.</p>
+      🏆 <b>Ambassadeur :</b> 10€ de remise par parrainage. Option Adultes offerte pour le filleul.
     </div>
 
     <div class="tv-notice">
-      <img src="https://oraplayers.com/wp-content/uploads/2025/06/LOGO.png" alt="ORA Players" class="tv-logo">
+      <img src="https://oraplayers.com/wp-content/uploads/2025/06/LOGO.png" alt="ORA" class="tv-logo">
       <div class="tv-content">
-        <h3>1. Téléchargez l'application ORA</h3>
-        <p>Installez l'application sur votre TV avant l'activation :</p>
+        <h3>1. Installation préalable ORA</h3>
         <div class="tv-grid">
-          <div class="tv-item"><strong>Samsung / LG</strong> Store : ORA Player</div>
-          <div class="tv-item"><strong>Android / Google</strong> Play Store : ORA IPTV</div>
+          <div class="tv-item"><b>Samsung / LG :</b> Store ORA Player</div>
+          <div class="tv-item"><b>Android / Sony :</b> Play Store ORA IPTV</div>
         </div>
       </div>
     </div>
 
-    <h2 style="font-size:28px; margin:0;">Catalogue des Solutions</h2>
-    <p style="color:var(--muted); margin-top:5px;">Activation via Wise, Bitsa, Lydia ou SEPA.</p>
-
     <div id="packs" class="grid"></div>
 
     <footer>
-      © <span id="year"></span> JEFE DIGITAL SERVICES — Consultant Digital.<br>
-      👻 Snapchat : <b>jefeiptv</b> | 📱 WhatsApp : <b>+237 686712411</b><br>
-      Offre de parrainage non cumulable avec les promos en cours.
+      © JEFE DIGITAL SERVICES — Consultant Digital.<br>
+      WhatsApp : +237 686712411 | Snap : jefeiptv
     </footer>
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const SNAP_URL = "https://www.snapchat.com/add/jefeiptv?share_id=8EAQAHU2k2s&locale=fr-CM-u-mu-celsius";
+    const WA_BASE = "https://wa.me/237686712411?text=";
+    
     const DATA = [
-      { t:'Pack SILVER (France & Sport)', p:40, d:'IPTV : TNT + Bouquet Sport complet (Canal+, BeIN, RMC). HD stables.', x:true },
-      { t:'Pack GOLD (International FHD)', p:50, d:'IPTV : Best-seller. Toutes les chaînes mondiales + Sport + VOD HD.', x:true },
-      { t:'Pack DIAMOND (World 4K)', p:60, d:'IPTV : Image 4K native. Sport Ultra HD et catalogue VOD immense.', x:true },
-      { t:'Pack BLACK (Full World + Adultes)', p:75, d:'L’offre ultime : Pack Diamond + Accès bouquets adultes sécurisés.' },
-      { t:'Pack WORLD VIP', p:65, d:'IPTV : International premium complet + VOD multilingue UHD.' },
-      { t:'Pack KIDS (Jeunesse)', p:40, d:'IPTV : Sélection sécurisée de chaînes jeunesse 24h/24.' },
-      { t:'Pack DOUBLE ÉCRAN', p:90, d:'IPTV : Profitez de deux connexions simultanées en qualité maximale.' },
-      { t:'EA PLAY PRO (12 mois PC)', p:79.99, d:'Version PC intégrale. Accès illimité aux derniers jeux EA (FIFA/FC25, etc).', lt:true },
-      { t:'Spotify Premium (12 mois)', p:45, d:'Écoute illimitée sans publicité. Mode hors connexion inclus.' },
-      { t:'ChatGPT Plus (12 mois)', p:90, d:'Accès Premium OpenAI. Modèles avancés et création DALL-E.' },
-      { t:'Gemini Advanced (12 mois)', p:90, d:'L\'IA de Google la plus puissante intégrée (12 mois).' },
-      { t:'Netflix Premium (12 mois)', p:65, d:'Compte personnel Ultra HD 4K. Profil privé sécurisé.' },
-      { t:'Prime Video (12 mois)', p:30, d:'Accès complet au catalogue Amazon Prime Video HD/4K.' },
-      { t:'YouTube Premium (1 an)', p:50, d:'Navigation sans publicité + YouTube Music inclus.' },
-      { t:'Pack Complet ADOBE', p:50, d:'Licence permanente à vie (Photoshop, Premiere, Illustrator...).', lt:true},
-      { t:'Suite Office 365 Pro', p:50, d:'Licence complète permanente à vie (Word, Excel, Outlook...).', lt:true},
-      { t:'iCloud+ Family (1 To)', p:30, d:'Stockage Apple 12 mois. Partage familial inclus.' },
-      { t:'iCloud+ Family (2 To)', p:50, d:'Capacité Apple maximale 12 mois. Partage familial.' },
-      { t:'ORA PLAYER (Lifetime)', p:10, d:'Activation définitive de l\'application Smart TV (licence à vie).', lt:true }
+      { t:'Pack SILVER (France & Sport)', p:40, d:'TNT + Bouquet Sport complet. Flux stables.', x:true },
+      { t:'Pack GOLD (International FHD)', p:50, d:'Toutes chaînes mondiales + Sport + VOD.', x:true },
+      { t:'Pack DIAMOND (World 4K)', p:60, d:'Image 4K native. Sport Ultra HD & VOD illimitée.', x:true },
+      { t:'Pack BLACK (Full + Adultes)', p:75, d:'Pack Diamond + Bouquets adultes sécurisés.' },
+      { t:'Pack WORLD VIP', p:65, d:'International premium + VOD multilingue UHD.' },
+      { t:'Pack KIDS (Jeunesse)', p:40, d:'Sélection sécurisée de chaînes jeunesse.' },
+      { t:'Pack DOUBLE ÉCRAN', p:90, d:'Deux connexions simultanées en qualité max.' },
+      { t:'EA PLAY PRO (12 mois PC)', p:79.99, d:'Accès illimité aux derniers jeux EA PC.', lt:true },
+      { t:'Spotify Premium (12 mois)', p:45, d:'Musique illimitée sans pub. Mode hors ligne.' },
+      { t:'ChatGPT Plus (12 mois)', p:90, d:'Accès Premium OpenAI (DALL-E inclus).' },
+      { t:'Gemini Advanced (12 mois)', p:90, d:'L’IA de Google la plus puissante.' },
+      { t:'Netflix Premium (12 mois)', p:65, d:'Compte personnel Ultra HD 4K privé.' },
+      { t:'Prime Video (12 mois)', p:30, d:'Accès catalogue Amazon Prime Video.' },
+      { t:'YouTube Premium (1 an)', p:50, d:'Sans pub + YouTube Music inclus.' },
+      { t:'Pack Complet ADOBE', p:50, d:'Licence permanente (Photoshop, Premiere...).', lt:true},
+      { t:'Suite Office 365 Pro', p:50, d:'Licence complète permanente (Word, Excel...).', lt:true},
+      { t:'iCloud+ (1 To)', p:30, d:'Stockage Apple 12 mois.' },
+      { t:'iCloud+ (2 To)', p:50, d:'Stockage Apple max 12 mois.' },
+      { t:'ORA PLAYER (Activation)', p:10, d:'Licence définitive application Smart TV.', lt:true }
     ];
 
     const packsEl = document.getElementById('packs');
     DATA.forEach(x=>{
       const el = document.createElement('div');
       el.className='card';
-      const isLifetime = x.lt || x.t.includes('vie');
-      
-      let buttonsHTML = `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20je%20profite%20de%20l'offre%20Fetes%20pour%20le%20pack%20:%20${encodeURIComponent(x.t)}" class="btn btn-wa">Commander (WhatsApp)</a>`;
-      
+      const isLifetime = x.lt;
+      const msg = encodeURIComponent("Bonjour Jefe, je souhaite commander le pack : " + x.t);
+
+      let buttonsHTML = `<div class="btn-group">`;
       if(x.x) {
-        buttonsHTML += `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20je%20souhaite%20commander%20le%20${encodeURIComponent(x.t)}%20avec%20le%20bonus%20adulte%20offert" class="btn btn-plus">+ Bonus Adultes Offert</a>`;
+        buttonsHTML += `<a href="${WA_BASE}${encodeURIComponent("J'ai l'offre fête pour le "+x.t+" avec option adulte offerte")}" class="btn btn-bonus">🎁 Option Adulte Offerte</a>`;
       }
+      buttonsHTML += `<a href="${WA_BASE}${msg}" class="btn btn-wa">WhatsApp</a>`;
+      buttonsHTML += `<a href="${SNAP_URL}" class="btn btn-snap">Snapchat</a>`;
+      buttonsHTML += `</div>`;
 
       el.innerHTML = `
-        ${isLifetime ? '<div class="lt-badge">♾️ Accès</div>' : ''}
-        <div style="font-weight:600; font-size:12px; color:var(--accent); letter-spacing:1px">PREMIUM</div>
-        <h3 style="margin:5px 0; font-size:17px">${x.t}</h3>
-        <div class="price">${x.p}€<span>${isLifetime ? '' : '/an'}</span></div>
+        <div style="font-size:10px; color:var(--accent); font-weight:800;">PREMIUM</div>
+        <h3 style="margin:5px 0; font-size:15px; color:#fff;">${x.t}</h3>
+        <div class="price">${x.p}€<span style="font-size:14px; color:var(--muted); font-weight:400;">${isLifetime ? '' : '/an'}</span></div>
         <p class="feat">${x.d}</p>
         ${buttonsHTML}
       `;
