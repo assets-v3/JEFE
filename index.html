@@ -11,7 +11,7 @@
   <style>
     :root {
       --bg: #050508; --card: #0f111a; --text: #f0f0f5; --muted: #8e91a8;
-      --accent: #10b981; --ring: #1e2130;
+      --accent: #10b981; --ring: #1e2130; --gold: #f59e0b;
     }
     * { box-sizing: border-box; }
     html, body { 
@@ -35,12 +35,27 @@
       border-radius: 4px; color: var(--accent); background: rgba(16, 185, 129, 0.05);
       text-transform: uppercase; font-weight: 600;
     }
+
+    /* Bloc Parrainage */
+    .promo-banner {
+      background: linear-gradient(90deg, rgba(229, 9, 20, 0.1), transparent);
+      border-left: 4px solid #e50914; border-radius: 12px;
+      padding: 20px; margin: 30px 0; display: flex; align-items: center; gap: 15px;
+    }
+    .promo-banner h4 { margin: 0; color: #fff; font-size: 16px; }
+    .promo-banner p { margin: 5px 0 0; font-size: 13px; color: var(--muted); }
+
     .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 30px; }
     .card { 
       background: var(--card); border: 1px solid var(--ring); border-radius: 20px; 
-      padding: 24px; transition: transform 0.3s ease; display: flex; flex-direction: column;
+      padding: 24px; transition: transform 0.3s ease; display: flex; flex-direction: column; position: relative;
     }
     .card:hover { transform: translateY(-5px); border-color: #334155; }
+    .lt-badge {
+      position: absolute; top: 15px; right: 15px; background: rgba(245, 158, 11, 0.1);
+      color: var(--gold); font-size: 10px; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--gold);
+      font-weight: 800; text-transform: uppercase;
+    }
     .price { font-size: 32px; font-weight: 800; color: #fff; margin: 10px 0; }
     .price span { font-size: 16px; color: var(--muted); font-weight: 400; }
     .feat { font-size: 14px; color: var(--muted); margin-bottom: 25px; flex-grow: 1; }
@@ -59,19 +74,27 @@
   <div class="container">
     <header>
       <div class="brand"><strong>JEFE DIGITAL SERVICES</strong></div>
-      <span class="badge">Catalogue Privé 2026</span>
+      <span class="badge">Catalogue Certifié 2026</span>
     </header>
 
-    <section style="margin-top:40px">
-      <h2 style="font-size:28px; margin:0;">Solutions Multimédias & Cloud</h2>
-      <p style="color:var(--muted); margin-top:5px;">Performance certifiée. Options spécifiques disponibles sur demande.</p>
+    <div class="promo-banner">
+      <div style="font-size: 24px;">🎁</div>
+      <div>
+        <h4>Offre Ambassadeur Jefe</h4>
+        <p>Pour chaque nouveau client ramené, recevez <b>1 MOIS DE NETFLIX GRATUIT</b> immédiatement.</p>
+      </div>
+    </div>
+
+    <section>
+      <h2 style="font-size:28px; margin:0;">Catalogue Premium</h2>
+      <p style="color:var(--muted); margin-top:5px;">Performance & Solidité — Support Client WhatsApp 7j/7.</p>
     </section>
 
     <div id="packs" class="grid"></div>
 
     <footer>
       © <span id="year"></span> JEFE DIGITAL SERVICES — Consultant Digital.<br>
-      Virement SEPA (Wise/Bitsa/Paysera) & Lydia acceptés. Toute reproduction interdite.
+      Paiements : Wise, Bitsa, Paysera ou Lydia. Toute reproduction interdite.
     </footer>
   </div>
 
@@ -79,29 +102,29 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     const DATA = [
       { t:'Pack SILVER (France & Sport)', p:40, d:'IPTV : TNT + Bouquet Sport complet (Canal+, BeIN, RMC). Flux HD stables.', x:true },
-      { t:'Pack GOLD (International FHD)', p:50, d:'IPTV : Best-seller. Toutes les chaînes mondiales + Sport + VOD.', x:true },
-      { t:'Pack DIAMOND (World 4K)', p:60, d:'IPTV : Image 4K native. Chaînes mondiales, Sport Ultra HD et VOD Cinema.', x:true },
+      { t:'Pack GOLD (International FHD)', p:50, d:'IPTV : Best-seller. Toutes les chaînes mondiales + Sport + VOD Cinema.', x:true },
+      { t:'Pack DIAMOND (World 4K)', p:60, d:'IPTV : Image 4K native. Chaînes mondiales, Sport Ultra HD et VOD.', x:true },
       { t:'Pack BLACK (Full 4K + Adultes)', p:75, d:'L’offre ultime : Pack Diamond + Accès complet aux bouquets adultes sécurisés.' },
       { t:'Pack WORLD VIP', p:65, d:'IPTV : Accès international premium complet + VOD multilingue UHD.' },
       { t:'Pack KIDS (Jeunesse)', p:40, d:'IPTV : Sélection sécurisée de chaînes jeunesse et dessins animés 24h/24.' },
       { t:'Pack DOUBLE ÉCRAN', p:90, d:'IPTV : Profitez de deux connexions simultanées en qualité maximale.' },
-      { t:'ChatGPT Plus (12 mois)', p:90, d:'Accès Premium OpenAI. Modèles avancés et outils DALL-E/Data.' },
-      { t:'Gemini Advanced (12 mois)', p:90, d:'L\'intelligence artificielle de Google la plus puissante (12 mois).' },
+      { t:'ChatGPT Plus (12 mois)', p:90, d:'Accès Premium OpenAI. Modèles avancés et création DALL-E.' },
+      { t:'Gemini Advanced (12 mois)', p:90, d:'L\'IA de Google la plus puissante intégrée (12 mois).' },
       { t:'Netflix Premium (12 mois)', p:65, d:'Compte personnel Ultra HD 4K. Profil privé sécurisé.' },
       { t:'Prime Video (12 mois)', p:30, d:'Accès complet au catalogue Amazon Prime Video HD/4K.' },
       { t:'YouTube Premium (1 an)', p:50, d:'Navigation sans publicité + YouTube Music inclus.' },
-      { t:'Pack Complet ADOBE', p:50, d:'Licence permanente à vie (Photoshop, Premiere, Illustrator...).'},
-      { t:'Suite Office 365 Pro', p:50, d:'Licence complète permanente à vie (Word, Excel, Outlook...).'},
+      { t:'Pack Complet ADOBE', p:50, d:'Licence permanente à vie (Photoshop, Premiere, Illustrator...).', lt:true},
+      { t:'Suite Office 365 Pro', p:50, d:'Licence complète permanente à vie (Word, Excel, Outlook...).', lt:true},
       { t:'iCloud+ Family (1 To)', p:30, d:'Stockage Apple 12 mois. Partage familial inclus.' },
       { t:'iCloud+ Family (2 To)', p:50, d:'Capacité Apple maximale 12 mois. Partage familial.' },
-      { t:'ORA PLAYER (Lifetime)', p:10, d:'Activation définitive de l\'application Smart TV (licence à vie).' }
+      { t:'ORA PLAYER (Lifetime)', p:10, d:'Activation définitive de l\'application Smart TV (licence à vie).', lt:true }
     ];
 
     const packsEl = document.getElementById('packs');
     DATA.forEach(x=>{
       const el = document.createElement('div');
       el.className='card';
-      const isLifetime = x.t.includes('vie') || x.t.includes('Lifetime') || x.t.includes('ADOBE') || x.t.includes('Office');
+      const isLifetime = x.lt || x.t.includes('vie');
       
       let buttonsHTML = `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20je%20souhaite%20commander%20:%20${encodeURIComponent(x.t)}" class="btn btn-wa">Commander</a>`;
       
@@ -110,6 +133,7 @@
       }
 
       el.innerHTML = `
+        ${isLifetime ? '<div class="lt-badge">♾️ Lifetime</div>' : ''}
         <div style="font-weight:600; font-size:12px; color:var(--accent); letter-spacing:1px">PREMIUM</div>
         <h3 style="margin:5px 0; font-size:17px">${x.t}</h3>
         <div class="price">${x.p}€<span>${isLifetime ? '' : '/an'}</span></div>
