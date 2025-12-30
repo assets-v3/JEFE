@@ -11,7 +11,7 @@
   <style>
     :root {
       --bg: #050508; --card: #0f111a; --text: #f0f0f5; --muted: #8e91a8;
-      --accent: #10b981; --ring: #1e2130; --gold: #f59e0b;
+      --accent: #10b981; --ring: #1e2130; --gold: #f59e0b; --blue: #3b82f6;
     }
     * { box-sizing: border-box; }
     html, body { 
@@ -30,20 +30,35 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       letter-spacing: -1px;
     }
-    .badge { 
-      font-size: 10px; border: 1px solid var(--ring); padding: 5px 12px; 
-      border-radius: 4px; color: var(--accent); background: rgba(16, 185, 129, 0.05);
-      text-transform: uppercase; font-weight: 600;
+    
+    /* Bloc Installation TV Officiel */
+    .tv-notice {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(15, 17, 26, 1) 100%);
+      border: 1px solid var(--blue);
+      border-radius: 20px;
+      padding: 25px;
+      margin: 30px 0;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
     }
-
-    /* Bloc Parrainage */
-    .promo-banner {
-      background: linear-gradient(90deg, rgba(229, 9, 20, 0.1), transparent);
-      border-left: 4px solid #e50914; border-radius: 12px;
-      padding: 20px; margin: 30px 0; display: flex; align-items: center; gap: 15px;
+    .tv-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      object-fit: contain;
+      background: #000;
+      padding: 5px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
     }
-    .promo-banner h4 { margin: 0; color: #fff; font-size: 16px; }
-    .promo-banner p { margin: 5px 0 0; font-size: 13px; color: var(--muted); }
+    .tv-content { flex: 1; min-width: 280px; }
+    .tv-notice h3 { margin: 0; color: #fff; font-size: 18px; }
+    .tv-notice p { font-size: 14px; color: var(--muted); margin: 5px 0 15px 0; }
+    
+    .tv-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .tv-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--ring); font-size: 13px; }
+    .tv-item strong { display: block; color: var(--blue); margin-bottom: 3px; }
 
     .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 30px; }
     .card { 
@@ -74,27 +89,38 @@
   <div class="container">
     <header>
       <div class="brand"><strong>JEFE DIGITAL SERVICES</strong></div>
-      <span class="badge">Catalogue Certifié 2026</span>
+      <span class="badge">Accès Privé 2026</span>
     </header>
 
-    <div class="promo-banner">
-      <div style="font-size: 24px;">🎁</div>
-      <div>
-        <h4>Offre Ambassadeur Jefe</h4>
-        <p>Pour chaque nouveau client ramené, recevez <b>1 MOIS DE NETFLIX GRATUIT</b> immédiatement.</p>
+    <div class="tv-notice">
+      <img src="https://oraplayers.com/images/logo.png" alt="ORA Players" class="tv-logo">
+      <div class="tv-content">
+        <h3>1. Configuration ORA Players</h3>
+        <p>L'application indispensable pour votre Smart TV ou Boitier Android :</p>
+        <div class="tv-grid">
+          <div class="tv-item">
+            <strong>Samsung / LG / Tizen</strong>
+            Cherchez <b>ORA Player</b> dans votre App Store. (7j d'essai, puis 10€ à vie).
+          </div>
+          <div class="tv-item">
+            <strong>Android TV / Sony / Chromecast</strong>
+            Cherchez <b>ORA IPTV</b> sur le Google Play Store.
+          </div>
+        </div>
       </div>
     </div>
 
     <section>
       <h2 style="font-size:28px; margin:0;">Catalogue Premium</h2>
-      <p style="color:var(--muted); margin-top:5px;">Performance & Solidité — Support Client WhatsApp 7j/7.</p>
+      <p style="color:var(--muted); margin-top:5px;">Activation après virement SEPA (Wise, Bitsa, Lydia).</p>
     </section>
 
     <div id="packs" class="grid"></div>
 
     <footer>
       © <span id="year"></span> JEFE DIGITAL SERVICES — Consultant Digital.<br>
-      Paiements : Wise, Bitsa, Paysera ou Lydia. Toute reproduction interdite.
+      🎁 Parrainage : 1 mois Netflix offert par client ramené !<br>
+      Toute commande implique l'acceptation de nos conditions privées.
     </footer>
   </div>
 
@@ -102,7 +128,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     const DATA = [
       { t:'Pack SILVER (France & Sport)', p:40, d:'IPTV : TNT + Bouquet Sport complet (Canal+, BeIN, RMC). Flux HD stables.', x:true },
-      { t:'Pack GOLD (International FHD)', p:50, d:'IPTV : Best-seller. Toutes les chaînes mondiales + Sport + VOD Cinema.', x:true },
+      { t:'Pack GOLD (International FHD)', p:50, d:'IPTV : Best-seller. Toutes les chaînes mondiales + Sport + VOD.', x:true },
       { t:'Pack DIAMOND (World 4K)', p:60, d:'IPTV : Image 4K native. Chaînes mondiales, Sport Ultra HD et VOD.', x:true },
       { t:'Pack BLACK (Full 4K + Adultes)', p:75, d:'L’offre ultime : Pack Diamond + Accès complet aux bouquets adultes sécurisés.' },
       { t:'Pack WORLD VIP', p:65, d:'IPTV : Accès international premium complet + VOD multilingue UHD.' },
@@ -126,10 +152,10 @@
       el.className='card';
       const isLifetime = x.lt || x.t.includes('vie');
       
-      let buttonsHTML = `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20je%20souhaite%20commander%20:%20${encodeURIComponent(x.t)}" class="btn btn-wa">Commander</a>`;
+      let buttonsHTML = `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20j'ai%20installé%20ORA.%20Je%20souhaite%20le%20:%20${encodeURIComponent(x.t)}" class="btn btn-wa">Commander</a>`;
       
       if(x.x) {
-        buttonsHTML += `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20je%20souhaite%20le%20${encodeURIComponent(x.t)}%20AVEC%20option%20Adultes" class="btn btn-plus">+ Option Adultes (${x.p + 10}€)</a>`;
+        buttonsHTML += `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20j'ai%20installé%20ORA.%20Je%20souhaite%20le%20${encodeURIComponent(x.t)}%20AVEC%20option%20Adultes" class="btn btn-plus">+ Option Adultes (${x.p + 10}€)</a>`;
       }
 
       el.innerHTML = `
