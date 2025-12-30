@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>JEFE DIGITAL — Solutions Multimédias</title>
+  <title>JEFE DIGITAL — Catalogue Intégral</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050508; --card: #0f111a; --text: #f0f0f5; --muted: #8e91a8;
-      --accent: #10b981; --ring: #1e2130;
+      --accent: #10b981; --ring: #1e2130; --blue: #3b82f6;
     }
     * { box-sizing: border-box; }
     html, body { 
@@ -49,12 +49,7 @@
       width: 100%; padding: 14px; border-radius: 12px; font-weight: 700; 
       transition: 0.2s; text-decoration: none; background: #fff; color: #000;
     }
-    .btn:hover { transform: scale(1.02); opacity: 0.9; }
-    .whatsapp-footer {
-      margin-top: 50px; padding: 30px; border-radius: 20px;
-      background: linear-gradient(rgba(16, 185, 129, 0.1), transparent);
-      border: 1px dashed var(--accent); text-align: center;
-    }
+    .btn-wa { background: #25d366 !important; color: #fff !important; margin-top: 10px; }
     footer { margin-top: 60px; padding: 40px 0; border-top: 1px solid var(--ring); text-align: center; font-size: 11px; color: var(--muted); }
   </style>
 </head>
@@ -66,37 +61,34 @@
     </header>
 
     <section style="margin-top:40px">
-      <h2 style="font-size:28px; margin:0;">Catalogue Multimédia Premium</h2>
-      <p style="color:var(--muted); margin-top:5px;">Solutions haute performance — Mise à jour 2026.</p>
+      <h2 style="font-size:28px; margin:0;">Solutions Digitales & Multimédias</h2>
+      <p style="color:var(--muted); margin-top:5px;">Catalogue exhaustif 2026 — Performance & Stabilité.</p>
     </section>
 
     <div id="packs" class="grid"></div>
 
-    <div class="whatsapp-footer">
-      <h3 style="margin:0 0 10px">Une question ?</h3>
-      <p style="font-size:14px; color:var(--muted); margin-bottom:20px;">Support client direct pour toute demande spécifique ou configuration de compte.</p>
-      <a href="https://wa.me/237686712411" class="btn" style="background:#25d366; color:#fff; width:auto; display:inline-flex; padding:12px 30px;">
-        Contact WhatsApp Support
-      </a>
-    </div>
-
     <footer>
       © <span id="year"></span> JEFE DIGITAL SERVICES — Consultant Digital.<br>
-      Virement SEPA (Wise/Bitsa/Paysera) & Lydia acceptés. Catalogue non référencé.
+      Paiements sécurisés via Wise, Bitsa, Paysera ou Lydia. Support 7j/7.
     </footer>
   </div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     const DATA = [
-      { t:'Pack SILVER (Standard HD)', p:40, d:'Flux stables qualité HD. Idéal pour terminaux mobiles et tablettes.' },
-      { t:'Pack GOLD (Full HD 1080p)', p:50, d:'Le best-seller. Sport et Cinéma fluide. Bibliothèque VOD complète incluse.' },
-      { t:'Pack DIAMOND (4K UHD)', p:60, d:'Expérience immersive. Image 4K native, Sport Ultra HD et VOD Cinema 4K.' },
-      { t:'Pack WORLD VIP', p:65, d:'Accès international complet. Flux mondiaux UHD + VOD multilingue.' },
-      { t:'Pack DOUBLE ÉCRAN', p:90, d:'Multiroom : Profitez de deux connexions simultanées en qualité maximale.' },
-      { t:'Netflix Premium (12 mois)', p:65, d:'Compte personnel en Ultra HD. Profil sécurisé garanti.' },
+      { t:'Pack SILVER (Standard HD)', p:40, d:'IPTV : Flux stables qualité HD. Idéal pour mobiles et tablettes.' },
+      { t:'Pack GOLD (Full HD 1080p)', p:50, d:'IPTV : Le best-seller. Sport et Cinéma fluide + VOD complète.' },
+      { t:'Pack DIAMOND (4K UHD)', p:60, d:'IPTV : Expérience immersive. Image 4K native et Sport Ultra HD.' },
+      { t:'Pack WORLD VIP', p:65, d:'IPTV : Accès international complet + VOD multilingue UHD.' },
+      { t:'Pack DOUBLE ÉCRAN', p:90, d:'IPTV : Profitez de deux connexions simultanées en qualité maximale.' },
+      { t:'ORA PLAYER (Lifetime)', p:10, d:'Activation définitive de l\'application pour Smart TV (licence à vie).' },
+      { t:'Netflix Premium (12 mois)', p:65, d:'Compte personnel Ultra HD 4K. Profil sécurisé garanti.' },
       { t:'YouTube Premium (1 an)', p:50, d:'Navigation sans publicité + YouTube Music inclus.' },
+      { t:'Prime Video (12 mois)', p:30, d:'Accès complet au catalogue Amazon Prime Video HD/4K.' },
+      { t:'Pack Complet ADOBE', p:50, d:'Licence à vie (Photoshop, Premiere, Illustrator, etc.).'},
       { t:'Suite Office 365 Pro', p:50, d:'Licence complète permanente (Word, Excel, Outlook...).'},
+      { t:'iCloud+ Family (1 To)', p:30, d:'Abonnement 12 mois. Stockage Apple partagé en famille.' },
+      { t:'iCloud+ Family (2 To)', p:50, d:'Abonnement 12 mois. Capacité maximale pour toute la famille.' },
       { t:'Pack Intelligence Artificielle', p:90, d:'Accès Premium 1 an aux outils OpenAI les plus avancés.' }
     ];
 
@@ -106,10 +98,10 @@
       el.className='card';
       el.innerHTML = `
         <div style="font-weight:600; font-size:12px; color:var(--accent); letter-spacing:1px">PREMIUM</div>
-        <h3 style="margin:5px 0; font-size:18px">${x.t}</h3>
-        <div class="price">${x.p}€<span>/an</span></div>
+        <h3 style="margin:5px 0; font-size:17px">${x.t}</h3>
+        <div class="price">${x.p}€<span>${x.t.includes('vie') || x.t.includes('Lifetime') || x.t.includes('ADOBE') ? '' : '/an'}</span></div>
         <p class="feat">${x.d}</p>
-        <a href="https://wa.me/237686712411?text=Bonjour%20Jefe%20Digital,%20je%20souhaite%20commander%3A%20${encodeURIComponent(x.t)}" class="btn">Commander</a>
+        <a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20je%20souhaite%20commander%20:%20${encodeURIComponent(x.t)}" class="btn btn-wa">Commander</a>
       `;
       packsEl.appendChild(el);
     });
