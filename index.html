@@ -30,36 +30,41 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       letter-spacing: -1px;
     }
-    
-    /* Bloc Installation TV avec Logo Exact */
+    .badge { 
+      font-size: 10px; border: 1px solid var(--ring); padding: 5px 12px; 
+      border-radius: 4px; color: var(--accent); background: rgba(16, 185, 129, 0.05);
+      text-transform: uppercase; font-weight: 600;
+    }
+
+    /* Bloc Programme Ambassadeur */
+    .ambassador-banner {
+      background: linear-gradient(90deg, rgba(16, 185, 129, 0.15), transparent);
+      border-left: 4px solid var(--accent); border-radius: 12px;
+      padding: 20px; margin: 20px 0;
+    }
+    .ambassador-banner h4 { margin: 0; color: #fff; font-size: 16px; }
+    .ambassador-banner p { margin: 5px 0 0; font-size: 13px; color: var(--muted); }
+    .ambassador-banner b { color: var(--accent); }
+
+    /* Bloc Installation TV Officiel */
     .tv-notice {
       background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(15, 17, 26, 1) 100%);
-      border: 1px solid var(--blue);
-      border-radius: 20px;
-      padding: 25px;
-      margin: 30px 0;
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      flex-wrap: wrap;
+      border: 1px solid var(--blue); border-radius: 20px;
+      padding: 25px; margin: 30px 0; display: flex; align-items: center; gap: 25px; flex-wrap: wrap;
     }
     .tv-logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 18px;
-      object-fit: contain;
-      background: #1a1d2e; /* Fond pour faire ressortir le logo */
-      padding: 8px;
-      border: 1px solid rgba(59, 130, 246, 0.3);
+      width: 80px; height: 80px; border-radius: 18px; object-fit: contain;
+      background: #ffffff; /* Fond blanc pour visibilité max */
+      padding: 10px; border: 2px solid var(--blue);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
     }
     .tv-content { flex: 1; min-width: 280px; }
     .tv-notice h3 { margin: 0; color: #fff; font-size: 18px; }
-    .tv-notice p { font-size: 14px; color: var(--muted); margin: 5px 0 15px 0; }
-    
-    .tv-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .tv-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 15px; }
     .tv-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--ring); font-size: 13px; }
     .tv-item strong { display: block; color: var(--blue); margin-bottom: 3px; }
 
+    /* Grille des Packs */
     .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 30px; }
     .card { 
       background: var(--card); border: 1px solid var(--ring); border-radius: 20px; 
@@ -74,14 +79,16 @@
     .price { font-size: 32px; font-weight: 800; color: #fff; margin: 10px 0; }
     .price span { font-size: 16px; color: var(--muted); font-weight: 400; }
     .feat { font-size: 14px; color: var(--muted); margin-bottom: 25px; flex-grow: 1; }
+    
+    /* Boutons */
     .btn { 
       display: flex; align-items: center; justify-content: center; 
       width: 100%; padding: 14px; border-radius: 12px; font-weight: 700; 
-      transition: 0.2s; text-decoration: none; background: #fff; color: #000;
-      margin-top: 8px;
+      transition: 0.2s; text-decoration: none; background: #fff; color: #000; margin-top: 8px;
     }
     .btn-wa { background: #25d366 !important; color: #fff !important; }
     .btn-plus { background: #1e293b !important; color: #fff !important; border: 1px solid #334155; }
+    
     footer { margin-top: 60px; padding: 40px 0; border-top: 1px solid var(--ring); text-align: center; font-size: 11px; color: var(--muted); }
   </style>
 </head>
@@ -89,21 +96,26 @@
   <div class="container">
     <header>
       <div class="brand"><strong>JEFE DIGITAL SERVICES</strong></div>
-      <span class="badge">Accès Privé 2026</span>
+      <span class="badge">Accès Privé Certifié</span>
     </header>
+
+    <div class="ambassador-banner">
+      <h4>🚀 Programme Ambassadeur Jefe</h4>
+      <p>Parrainez un ami et gagnez <b>10€ de remise</b>. Votre ami reçoit l'<b>Option Adultes OFFERTE</b> pour sa bienvenue !</p>
+    </div>
 
     <div class="tv-notice">
       <img src="https://oraplayers.com/wp-content/uploads/2025/06/LOGO.png" alt="ORA Players" class="tv-logo">
       <div class="tv-content">
         <h3>1. Téléchargez ORA Players</h3>
-        <p>L'application indispensable pour votre Smart TV ou Boitier Android :</p>
+        <p>Installez l'application avant de nous contacter pour l'activation :</p>
         <div class="tv-grid">
           <div class="tv-item">
-            <strong>Samsung / LG / Tizen</strong>
+            <strong>Samsung / LG / Smart TV</strong>
             Cherchez <b>ORA Player</b> (7j d'essai, puis 10€ à vie).
           </div>
           <div class="tv-item">
-            <strong>Android TV / Sony / Chromecast</strong>
+            <strong>Android TV / Box / Sony</strong>
             Cherchez <b>ORA IPTV</b> sur le Play Store.
           </div>
         </div>
@@ -111,16 +123,16 @@
     </div>
 
     <section>
-      <h2 style="font-size:28px; margin:0;">Catalogue Premium</h2>
-      <p style="color:var(--muted); margin-top:5px;">Activation instantanée après réception du virement.</p>
+      <h2 style="font-size:28px; margin:0;">Catalogue des Solutions</h2>
+      <p style="color:var(--muted); margin-top:5px;">Mise à jour 2026 — Activation via Wise, Bitsa, Lydia ou SEPA.</p>
     </section>
 
     <div id="packs" class="grid"></div>
 
     <footer>
       © <span id="year"></span> JEFE DIGITAL SERVICES — Consultant Digital.<br>
-      🎁 Parrainage : 1 mois Netflix offert par client ramené !<br>
-      Paiements : Wise, Bitsa, Paysera ou Lydia.
+      Toute commande IPTV requiert l'activation de l'application ORA.<br>
+      Support prioritaire via WhatsApp.
     </footer>
   </div>
 
@@ -130,7 +142,7 @@
       { t:'Pack SILVER (France & Sport)', p:40, d:'IPTV : TNT + Bouquet Sport complet (Canal+, BeIN, RMC). Flux HD stables.', x:true },
       { t:'Pack GOLD (International FHD)', p:50, d:'IPTV : Best-seller. Toutes les chaînes mondiales + Sport + VOD.', x:true },
       { t:'Pack DIAMOND (World 4K)', p:60, d:'IPTV : Image 4K native. Chaînes mondiales, Sport Ultra HD et VOD.', x:true },
-      { t:'Pack BLACK (Full 4K + Adultes)', p:75, d:'L’offre ultime : Pack Diamond + Accès complet aux bouquets adultes sécurisés.' },
+      { t:'Pack BLACK (Full World + Adultes)', p:75, d:'L’offre ultime : Pack Diamond + Accès complet aux bouquets adultes sécurisés.' },
       { t:'Pack WORLD VIP', p:65, d:'IPTV : Accès international premium complet + VOD multilingue UHD.' },
       { t:'Pack KIDS (Jeunesse)', p:40, d:'IPTV : Sélection sécurisée de chaînes jeunesse et dessins animés 24h/24.' },
       { t:'Pack DOUBLE ÉCRAN', p:90, d:'IPTV : Profitez de deux connexions simultanées en qualité maximale.' },
@@ -152,10 +164,10 @@
       el.className='card';
       const isLifetime = x.lt || x.t.includes('vie');
       
-      let buttonsHTML = `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20j'ai%20installé%20ORA.%20Je%20souhaite%20le%20:%20${encodeURIComponent(x.t)}" class="btn btn-wa">Commander</a>`;
+      let buttonsHTML = `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20j'ai%20installé%20ORA.%20Je%20souhaite%20commander%20le%20:%20${encodeURIComponent(x.t)}" class="btn btn-wa">Commander</a>`;
       
       if(x.x) {
-        buttonsHTML += `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20j'ai%20installé%20ORA.%20Je%20souhaite%20le%20${encodeURIComponent(x.t)}%20AVEC%20option%20Adultes" class="btn btn-plus">+ Option Adultes (${x.p + 10}€)</a>`;
+        buttonsHTML += `<a href="https://wa.me/237686712411?text=Bonjour%20Jefe,%20je%20suis%20parrainé%20et%20je%20souhaite%20le%20${encodeURIComponent(x.t)}%20AVEC%20option%20Adultes%20offerte" class="btn btn-plus">+ Option Adultes (${x.p + 10}€)</a>`;
       }
 
       el.innerHTML = `
