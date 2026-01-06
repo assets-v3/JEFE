@@ -12,6 +12,7 @@
     :root {
       --bg: #050508; --card: #0f111a; --text: #f0f0f5; --muted: #8e91a8;
       --accent: #10b981; --ring: #1e2130; --gold: #f59e0b; --blue: #3b82f6; --promo: #ef4444; --snap: #FFFC00;
+      --feat-text: #cbd5e1; /* Couleur améliorée pour la lisibilité */
     }
     * { box-sizing: border-box; }
     html, body { 
@@ -24,25 +25,24 @@
     header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--ring); }
     .brand strong { font-size: 20px; color: #fff; letter-spacing: -1px; }
 
-    /* Promo & Ambassadeur */
     .promo-banner { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--promo); border-radius: 12px; padding: 12px; margin: 15px 0; text-align: center; }
     .promo-banner b { color: var(--promo); }
     .ambassador-banner { border-left: 3px solid var(--accent); background: rgba(16, 185, 129, 0.05); padding: 12px; margin-bottom: 20px; border-radius: 0 8px 8px 0; font-size: 13px; }
 
-    /* Installation TV */
     .tv-notice { background: #0f111a; border: 1px solid var(--blue); border-radius: 16px; padding: 20px; margin: 25px 0; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
     .tv-logo { width: 65px; height: 65px; border-radius: 12px; background: #fff; padding: 8px; object-fit: contain; }
     .tv-content h3 { margin: 0; font-size: 16px; color: #fff; }
     .tv-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 10px; }
     .tv-item { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 10px; font-size: 12px; border: 1px solid var(--ring); }
 
-    /* Grille des Packs */
     .grid { display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
     .card { background: var(--card); border: 1px solid var(--ring); border-radius: 18px; padding: 20px; display: flex; flex-direction: column; position: relative; }
     .price { font-size: 28px; font-weight: 800; color: #fff; margin: 5px 0; }
-    .feat { font-size: 13px; color: var(--muted); margin-bottom: 15px; flex-grow: 1; }
+    
+    /* Correction de la visibilité du texte ici */
+    .feat { font-size: 13px; color: var(--feat-text); margin-bottom: 15px; flex-grow: 1; }
+    .feat b { color: #fff; } /* Met les prix en gras en blanc pur */
 
-    /* Boutons de commande Réduits */
     .btn-group { display: flex; gap: 8px; flex-direction: column; }
     .btn { 
       display: flex; align-items: center; justify-content: center; 
@@ -53,11 +53,11 @@
     .btn-snap { background: var(--snap); color: #000; }
     .btn-bonus { background: transparent; border: 1px solid var(--blue); color: var(--blue); margin-bottom: 5px; }
 
-    footer { margin-top: 50px; padding: 30px 0; text-align: center; font-size: 11px; color: var(--muted); border-top: 1px solid var(--ring); }
-    
     .trust-section { margin-top: 40px; padding: 20px; background: rgba(16, 185, 129, 0.05); border-radius: 16px; border: 1px dashed var(--accent); }
     .trust-section h3 { margin-top: 0; color: var(--accent); font-size: 16px; }
-    .trust-section ul { font-size: 13px; color: var(--muted); padding-left: 20px; margin: 0; }
+    .trust-section ul { font-size: 13px; color: var(--feat-text); padding-left: 20px; margin: 0; }
+
+    footer { margin-top: 50px; padding: 30px 0; text-align: center; font-size: 11px; color: var(--muted); border-top: 1px solid var(--ring); }
   </style>
 </head>
 <body>
@@ -73,17 +73,6 @@
 
     <div class="ambassador-banner">
       🏆 <b>Ambassadeur :</b> 10€ de remise par parrainage. Option Adultes offerte pour le filleul.
-    </div>
-
-    <div class="tv-notice">
-      <img src="https://oraplayers.com/wp-content/uploads/2025/06/LOGO.png" alt="ORA" class="tv-logo">
-      <div class="tv-content">
-        <h3>1. Installation préalable ORA</h3>
-        <div class="tv-grid">
-          <div class="tv-item"><b>Samsung / LG :</b> Store ORA Player</div>
-          <div class="tv-item"><b>Android / Sony :</b> Play Store ORA IPTV</div>
-        </div>
-      </div>
     </div>
 
     <div id="packs" class="grid"></div>
@@ -115,12 +104,12 @@
       { t:'Pack WORLD VIP', p:65, d:'International premium + VOD multilingue UHD.' },
       { t:'Pack KIDS (Jeunesse)', p:40, d:'Sélection sécurisée de chaînes jeunesse.' },
       { t:'Pack DOUBLE ÉCRAN', p:90, d:'Deux connexions simultanées en qualité max.' },
-      { t:'ChatGPT Plus (IA Premium)', p:90, d:'Accès DALL-E 3 & GPT-4o. Options : 1 mois (15€) | 3 mois (35€) | 6 mois (60€).' },
-      { t:'Gemini Advanced (Google IA)', p:90, d:'L’IA la plus puissante de Google. Options : 1 mois (15€) | 3 mois (35€) | 6 mois (60€).' },
-      { t:'Netflix Premium (4K)', p:60, d:'Profil perso (Partagé). Options : 1 mois (10€) | 3 mois (25€). Compte PRIVÉ (Solo) : 100€/an.' },
-      { t:'YouTube Premium (Existant)', p:50, d:'Activation sur VOTRE compte actuel. Sans pub + YouTube Music.' },
+      { t:'ChatGPT Plus (IA Premium)', p:90, d:'Accès GPT-4o. Options : <b>1 mois (15€)</b> | <b>3 mois (35€)</b> | <b>6 mois (60€)</b>.' },
+      { t:'Gemini Advanced (Google IA)', p:90, d:'L’IA la plus puissante. Options : <b>1 mois (15€)</b> | <b>3 mois (35€)</b> | <b>6 mois (60€)</b>.' },
+      { t:'Netflix Premium (4K)', p:60, d:'Profil perso (Partagé). Options : <b>1 mois (10€)</b> | <b>3 mois (25€)</b>. Compte PRIVÉ : <b>100€/an</b>.' },
+      { t:'YouTube Premium (Existant)', p:50, d:'Activation sur VOTRE compte actuel. Sans pub + Music.' },
       { t:'YouTube Premium (Nouveau)', p:65, d:'Nouveau compte. Inclus : Invitation pour 5 membres de votre famille.' },
-      { t:'Spotify Premium (12 mois)', p:45, d:'Nouveau compte créé pour vous. Options : 3 mois (15€) | 6 mois (25€).' },
+      { t:'Spotify Premium (12 mois)', p:45, d:'Nouveau compte. Options : <b>3 mois (15€)</b> | <b>6 mois (25€)</b>.' },
       { t:'Prime Video (12 mois)', p:30, d:'Accès catalogue Amazon Prime Video complet.' },
       { t:'iCloud+ (1 To)', p:30, d:'Stockage Apple 12 mois sécurisé.' },
       { t:'iCloud+ (2 To)', p:50, d:'Stockage Apple max 12 mois.' },
