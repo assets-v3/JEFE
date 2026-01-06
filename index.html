@@ -54,6 +54,10 @@
     .btn-bonus { background: transparent; border: 1px solid var(--blue); color: var(--blue); margin-bottom: 5px; }
 
     footer { margin-top: 50px; padding: 30px 0; text-align: center; font-size: 11px; color: var(--muted); border-top: 1px solid var(--ring); }
+    
+    .trust-section { margin-top: 40px; padding: 20px; background: rgba(16, 185, 129, 0.05); border-radius: 16px; border: 1px dashed var(--accent); }
+    .trust-section h3 { margin-top: 0; color: var(--accent); font-size: 16px; }
+    .trust-section ul { font-size: 13px; color: var(--muted); padding-left: 20px; margin: 0; }
   </style>
 </head>
 <body>
@@ -84,6 +88,16 @@
 
     <div id="packs" class="grid"></div>
 
+    <div class="trust-section">
+      <h3>🏆 Pourquoi choisir JEFE DIGITAL ?</h3>
+      <ul>
+        <li><b>Économie massive :</b> Jusqu'à -75% par rapport aux tarifs officiels France.</li>
+        <li><b>Support Réactif :</b> Assistance 7j/7 via WhatsApp et Snapchat.</li>
+        <li><b>Flexibilité :</b> Choisissez la durée qui vous convient (1, 3, 6 ou 12 mois).</li>
+        <li><b>Sécurité :</b> Comptes vérifiés et accès garantis sur toute la durée.</li>
+      </ul>
+    </div>
+
     <footer>
       © JEFE DIGITAL SERVICES — Consultant Digital.<br>
       WhatsApp : +237 686712411 | Snap : jefeiptv
@@ -97,21 +111,18 @@
     const DATA = [
       { t:'Pack SILVER (France & Sport)', p:40, d:'TNT + Bouquet Sport complet. Flux stables.', x:true },
       { t:'Pack GOLD (International FHD)', p:50, d:'Toutes chaînes mondiales + Sport + VOD.', x:true },
-      { t:'Pack DIAMOND (World 4K)', p:60, d:'Image 4K native. Sport Ultra HD & VOD illimitée.', x:true },
-      { t:'Pack BLACK (Full + Adultes)', p:75, d:'Pack Diamond + Bouquets adultes sécurisés.' },
+      { t:'Pack DIAMOND (Premium + Adultes)', p:65, d:'VOD 4K illimitée. Chaînes 4K selon disponibilité. Inclus : Bouquets adultes sécurisés.', x:true },
       { t:'Pack WORLD VIP', p:65, d:'International premium + VOD multilingue UHD.' },
       { t:'Pack KIDS (Jeunesse)', p:40, d:'Sélection sécurisée de chaînes jeunesse.' },
       { t:'Pack DOUBLE ÉCRAN', p:90, d:'Deux connexions simultanées en qualité max.' },
-      { t:'EA PLAY PRO (12 mois PC)', p:79.99, d:'Accès illimité aux derniers jeux EA PC.', lt:true },
-      { t:'Spotify Premium (12 mois)', p:45, d:'Musique illimitée sans pub. Mode hors ligne.' },
-      { t:'ChatGPT Plus (12 mois)', p:90, d:'Accès Premium OpenAI (DALL-E inclus).' },
-      { t:'Gemini Advanced (12 mois)', p:90, d:'L’IA de Google la plus puissante.' },
-      { t:'Netflix Premium (12 mois)', p:65, d:'Compte personnel Ultra HD 4K privé.' },
-      { t:'Prime Video (12 mois)', p:30, d:'Accès catalogue Amazon Prime Video.' },
-      { t:'YouTube Premium (1 an)', p:50, d:'Sans pub + YouTube Music inclus.' },
-      { t:'Pack Complet ADOBE', p:50, d:'Licence permanente (Photoshop, Premiere...).', lt:true},
-      { t:'Suite Office 365 Pro', p:50, d:'Licence complète permanente (Word, Excel...).', lt:true},
-      { t:'iCloud+ (1 To)', p:30, d:'Stockage Apple 12 mois.' },
+      { t:'ChatGPT Plus (IA Premium)', p:90, d:'Accès DALL-E 3 & GPT-4o. Options : 1 mois (15€) | 3 mois (35€) | 6 mois (60€).' },
+      { t:'Gemini Advanced (Google IA)', p:90, d:'L’IA la plus puissante de Google. Options : 1 mois (15€) | 3 mois (35€) | 6 mois (60€).' },
+      { t:'Netflix Premium (4K)', p:60, d:'Profil perso (Partagé). Options : 1 mois (10€) | 3 mois (25€). Compte PRIVÉ (Solo) : 100€/an.' },
+      { t:'YouTube Premium (Existant)', p:50, d:'Activation sur VOTRE compte actuel. Sans pub + YouTube Music.' },
+      { t:'YouTube Premium (Nouveau)', p:65, d:'Nouveau compte. Inclus : Invitation pour 5 membres de votre famille.' },
+      { t:'Spotify Premium (12 mois)', p:45, d:'Nouveau compte créé pour vous. Options : 3 mois (15€) | 6 mois (25€).' },
+      { t:'Prime Video (12 mois)', p:30, d:'Accès catalogue Amazon Prime Video complet.' },
+      { t:'iCloud+ (1 To)', p:30, d:'Stockage Apple 12 mois sécurisé.' },
       { t:'iCloud+ (2 To)', p:50, d:'Stockage Apple max 12 mois.' },
       { t:'ORA PLAYER (Activation)', p:10, d:'Licence définitive application Smart TV.', lt:true }
     ];
